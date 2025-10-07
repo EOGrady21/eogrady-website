@@ -184,3 +184,26 @@ section {
 h2 {
     margin-top: 0;
 }
+footer {
+    background: #2a3a5c;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 0 1em 0;
+    margin-top: 2em;
+}
+.social-icons {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+.social-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s;
+}
+.social-icon:hover {
+    filter: brightness(0.7) invert(0.7) sepia(1) hue-rotate(180deg) saturate(4);
+}
