@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            max-width: 1200px;
+            margin: 2em auto;
+            align-items: flex-start;
+        }
+        .about-text {
+            flex: 2 1 300px;
+            min-width: 280px;
+        }
+        .about-gallery {
+            flex: 3 1 400px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+        .about-gallery img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: #eee;
+        }
+        @media (max-width: 900px) {
+            .about-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .about-gallery {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span id="hamburger" class="hamburger">&#9776;</span>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="about.html">About Me</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>
+                        <!-- Write your bio here -->
+                        Hello! I'm [Your Name], a [your profession/interest]. I love [your hobbies/interests]. 
+                        This page is a little window into my world—scroll through the gallery to see some of my favorite moments, projects, and inspirations!
+                    </p>
+                    <p>
+                        <!-- More about you -->
+                        Whether I'm working on creative projects, exploring new places, or spending time with friends and family, I always try to capture the beauty and fun in everyday life.
+                    </p>
+                </div>
+                <div class="about-gallery">
+                    <img src="images/photo1.jpg" alt="Description 1">
+                    <img src="images/photo2.jpg" alt="Description 2">
+                    <img src="images/photo3.jpg" alt="Description 3">
+                    <img src="images/photo4.jpg" alt="Description 4">
+                    <img src="images/photo5.jpg" alt="Description 5">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

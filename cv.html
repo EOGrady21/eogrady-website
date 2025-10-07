@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV / Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span id="hamburger" class="hamburger">&#9776;</span>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="about.html">About Me</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+    <main>
+        <section id="profile">
+            <h2>Profile</h2>
+            <p>
+                <!-- Brief summary about yourself -->
+                Experienced professional with expertise in [Your Field]. Passionate about [Your Interests].
+            </p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>Degree Name</strong>, University Name, Year<br>
+                    Description or achievements.
+                </li>
+                <!-- Add more education entries as needed -->
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <ul>
+                <li>
+                    <strong>Job Title</strong> at Company Name (Year–Year)<br>
+                    Brief description of responsibilities and achievements.
+                </li>
+                <!-- Add more experience entries as needed -->
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    Author(s). <strong>Title of Publication</strong>. <em>Journal/Conference</em>, Year.
+                </li>
+                <li>
+                    Author(s). <strong>Title of Publication</strong>. <em>Journal/Conference</em>, Year.
+                </li>
+                <!-- Add more publications as needed -->
+            </ul>
+        </section>
+    </main>
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

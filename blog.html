@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-container {
+            column-count: 3;
+            column-gap: 2em;
+            padding: 2em;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .blog-post {
+            break-inside: avoid;
+            background: #fff;
+            margin-bottom: 2em;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        @media (max-width: 900px) {
+            .blog-container { column-count: 2; }
+        }
+        @media (max-width: 600px) {
+            .blog-container { column-count: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span id="hamburger" class="hamburger">&#9776;</span>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="about.html">About Me</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+    <main>
+        <h2>Blog</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <h3>Blog Post Title 1</h3>
+                <p class="meta">Date | Author</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex.</p>
+                <a href="#">Read more</a>
+            </article>
+            <article class="blog-post">
+                <h3>Blog Post Title 2</h3>
+                <p class="meta">Date | Author</p>
+                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.</p>
+                <a href="#">Read more</a>
+            </article>
+            <article class="blog-post">
+                <h3>Blog Post Title 3</h3>
+                <p class="meta">Date | Author</p>
+                <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                <a href="#">Read more</a>
+            </article>
+            <!-- Add more blog-post articles as needed -->
+        </div>
+    </main>
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

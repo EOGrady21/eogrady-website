@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span id="hamburger" class="hamburger">&#9776;</span>
+            <nav id="nav">
+                <a href="cv.html">CV</a>
+                <a href="about.html">About Me</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Spotlight -->
+        <section class="spotlight">
+    <h2>Project Spotlight</h2>
+    <div class="carousel-container">
+        <button class="carousel-btn left" aria-label="Previous">&#8592;</button>
+        <div class="carousel-track">
+            <div class="project-slide">
+                <img src="images/project1.jpg" alt="Project 1 Screenshot" class="project-image">
+                <div class="project-info">
+                    <h3>Project 1 Title</h3>
+                    <p>Short description of Project 1. Highlight the main features, technologies used, and your role.</p>
+                </div>
+            </div>
+            <div class="project-slide">
+                <img src="images/project2.jpg" alt="Project 2 Screenshot" class="project-image">
+                <div class="project-info">
+                    <h3>Project 2 Title</h3>
+                    <p>Short description of Project 2. Highlight the main features, technologies used, and your role.</p>
+                </div>
+            </div>
+            <div class="project-slide">
+                <img src="images/project3.jpg" alt="Project 3 Screenshot" class="project-image">
+                <div class="project-info">
+                    <h3>Project 3 Title</h3>
+                    <p>Short description of Project 3. Highlight the main features, technologies used, and your role.</p>
+                </div>
+            </div>
+            <div class="project-slide">
+                <img src="images/project4.jpg" alt="Project 4 Screenshot" class="project-image">
+                <div class="project-info">
+                    <h3>Project 4 Title</h3>
+                    <p>Short description of Project 4. Highlight the main features, technologies used, and your role.</p>
+                </div>
+            </div>
+            <!-- Add more project-slide blocks as needed -->
+        </div>
+        <button class="carousel-btn right" aria-label="Next">&#8594;</button>
+    </div>
+</section>
+
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <p>
+                <!-- Your bio goes here -->
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>Publication 1 - <em>Journal/Conference</em>, Year</li>
+                <li>Publication 2 - <em>Journal/Conference</em>, Year</li>
+                <li>Publication 3 - <em>Journal/Conference</em>, Year</li>
+                <!-- Add more publications as needed -->
+            </ul>
+        </section>
+    </main>
+    <script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+
+    // Carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const projects = document.querySelectorAll('.carousel-track .project-slide');
+    const btnLeft = document.querySelector('.carousel-btn.left');
+    const btnRight = document.querySelector('.carousel-btn.right');
+    let currentIndex = 0;
+
+    function getSlideWidth() {
+        const slide = projects[0];
+        const style = window.getComputedStyle(slide);
+        const width = slide.offsetWidth;
+        const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+        return width + gap;
+    }
+
+    function updateCarousel() {
+        const slideWidth = getSlideWidth();
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    btnLeft.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    btnRight.addEventListener('click', () => {
+        if (currentIndex < projects.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel(); // Ensure it starts at the first slide
+});
+    </script>
+</body>
+</html>

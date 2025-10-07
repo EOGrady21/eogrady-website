@@ -1,0 +1,186 @@
+/* Basic styles for layout and demonstration */
+body { font-family: Arial, sans-serif; margin: 0; }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: #2a3a5c;
+    color: #fff;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+.hamburger {
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+/* Show hamburger and hide nav by default */
+.hamburger {
+    display: block;
+}
+
+/* Hide nav links on small screens, show when active */
+nav {
+    display: none;
+    flex-direction: column;
+    background: #425c8e;
+    color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    z-index: 1000;
+}
+nav.active {
+    display: flex;
+}
+
+/* On larger screens, show nav links inline and hide hamburger */
+@media (min-width: 700px) {
+    .hamburger {
+        display: none;
+    }
+    nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+    }
+    nav.active {
+        display: flex !important;
+    }
+    nav a {
+        border-bottom: none;
+        padding: 0 1em;
+        color:aliceblue;
+    }
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    padding: 0.5em;
+    border-radius: 4px;
+    border: none;
+}
+/* Project Spotlight styles */
+.spotlight {
+    margin: 2em 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: aliceblue;
+    padding: 1em 0;
+}
+.carousel-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    max-width: 100%;
+    width: 90%; 
+    margin: 0 auto;
+    overflow: hidden; 
+    min-height: 420px;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c61d3;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background 0.2s;
+    opacity: 0.8;
+}
+.carousel-btn.left {
+    left: 10px;
+}
+.carousel-btn.right {
+    right: 10px;
+}
+.carousel-btn:hover {
+    background: #23304a;
+    opacity: 1;
+}
+.carousel-track {
+    display: flex;
+    scroll-behavior: smooth;
+    transition: transform 0.3s;
+    align-items: stretch;
+    gap: 20px;
+}
+.project-slide {
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 340px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px aliceblue;
+    padding: 2em;
+    gap: 2em;
+}
+.project-image {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #eee;
+    flex-shrink: 0;
+}
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+}
+.project-info h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 2em;
+    color: #2a3a5c;
+}
+.project-info p {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+@media (max-width: 700px) {
+    .carousel-track {
+        width: 95vw;
+    }
+    .project-slide, .project-slide {
+        min-width: 90vw;
+        max-width: 90vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        gap: 1em;
+    }
+    .project-image {
+        width: 90vw;
+        height: 180px;
+    }
+}
+/* Section styles */
+section {
+    margin: 2em;
+    padding: 1em;
+    background: #f7f9fc;
+    border-radius: 8px;
+}
+h2 {
+    margin-top: 0;
+}
