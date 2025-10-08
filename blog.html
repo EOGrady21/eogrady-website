@@ -5,29 +5,7 @@
     <title>Emily OGrady | Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .blog-container {
-            column-count: 3;
-            column-gap: 2em;
-            padding: 2em;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .blog-post {
-            break-inside: avoid;
-            background: #fff;
-            margin-bottom: 2em;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        }
-        @media (max-width: 900px) {
-            .blog-container { column-count: 2; }
-        }
-        @media (max-width: 600px) {
-            .blog-container { column-count: 1; }
-        }
-    </style>
+    <link rel="stylesheet" href="blog/style.css">
 </head>
 <body>
     <header>
@@ -46,27 +24,25 @@
         </div>
     </header>
     <main>
-        <h2>Blog</h2>
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <p>Thoughts, insights, and experiences from my journey in digital innovation and technology.</p>
+        </div>
+        
         <div class="blog-container">
             <article class="blog-post">
-                <h3>Blog Post Title 1</h3>
-                <p class="meta">Date | Author</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex.</p>
-                <a href="#">Read more</a>
+                <h3>Masters of Digital Innovation at Dalhousie University</h3>
+                <p class="meta">October 8, 2025 | Emily O'Grady</p>
+                <p>Exploring the comprehensive Masters of Digital Innovation program at Dalhousie University - from curriculum highlights to career opportunities in Atlantic Canada's growing tech sector. Discover how this program prepares students to become digital transformation leaders.</p>
+                <a href="blog/masters-of-digital-innovation.html" class="read-more">Read Full Post</a>
             </article>
             <article class="blog-post">
-                <h3>Blog Post Title 2</h3>
-                <p class="meta">Date | Author</p>
-                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.</p>
-                <a href="#">Read more</a>
+                <h3>QSEA: Agentic AI for Ocean Data Quality Control</h3>
+                <p class="meta">October 8, 2025 | Emily O'Grady</p>
+                <p>Proposing an innovative agentic AI system to revolutionize ocean data quality control. QSEA (Quality control with Smart, Explainable Agents) addresses the critical bottleneck in oceanographic data management by developing intelligent, automated solutions that augment expert judgment while ensuring data reliability and scientific integrity.</p>
+                <a href="blog/qsea.html" class="read-more">Read Full Post</a>
             </article>
-            <article class="blog-post">
-                <h3>Blog Post Title 3</h3>
-                <p class="meta">Date | Author</p>
-                <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
-                <a href="#">Read more</a>
-            </article>
-            <!-- Add more blog-post articles as needed -->
+            
         </div>
     </main>
     <script>

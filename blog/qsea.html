@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QSEA: Agentic AI for Ocean Data Quality Control | Emily O'Grady</title>
+    <meta name="description" content="Proposing an innovative agentic AI system to revolutionize ocean data quality control. QSEA addresses critical bottlenecks in oceanographic data management through intelligent automation.">
+    <meta name="author" content="Emily O'Grady">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://eogrady21.github.io/eogrady-website/blog/qsea.html">
+    <meta property="og:title" content="QSEA: Agentic AI for Ocean Data Quality Control | Emily O'Grady">
+    <meta property="og:description" content="Proposing an innovative agentic AI system to revolutionize ocean data quality control. QSEA addresses critical bottlenecks in oceanographic data management through intelligent automation.">
+    <meta property="og:image" content="https://eogrady21.github.io/eogrady-website/images/dp.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://eogrady21.github.io/eogrady-website/blog/qsea.html">
+    <meta property="twitter:title" content="QSEA: Agentic AI for Ocean Data Quality Control | Emily O'Grady">
+    <meta property="twitter:description" content="Proposing an innovative agentic AI system to revolutionize ocean data quality control. QSEA addresses critical bottlenecks in oceanographic data management through intelligent automation.">
+    <meta property="twitter:image" content="https://eogrady21.github.io/eogrady-website/images/dp.jpg">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Social sharing specific styles */
+        .social-sharing {
+            margin: 2em 0;
+            padding: 1.5em;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #2c61d3;
+        }
+        
+        .social-sharing h4 {
+            margin-top: 0;
+            margin-bottom: 1em;
+            color: #1a2a4f;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        
+        .sharing-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8em;
+        }
+        
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6em 1.2em;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+        
+        .share-btn.linkedin {
+            background: #0077B5;
+        }
+        
+        .share-btn.facebook {
+            background: #1877F2;
+        }
+        
+        .share-btn.email {
+            background: #6B7280;
+        }
+        
+        .share-btn.copy {
+            background: #059669;
+        }
+        
+        .share-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5em;
+            filter: brightness(0) invert(1);
+        }
+        
+        @media (max-width: 600px) {
+            .sharing-buttons {
+                flex-direction: column;
+            }
+            
+            .share-btn {
+                justify-content: center;
+            }
+        }
+        
+        /* Copy success message */
+        .copy-success {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #059669;
+            color: white;
+            padding: 1em 1.5em;
+            border-radius: 6px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .copy-success.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span id="hamburger" class="hamburger">&#9776;</span>
+            <nav id="nav">
+                <a href="../index.html">Home</a>
+                <a href="../cv.html">CV</a>
+                <a href="../about.html">About Me</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-post-container">
+            <nav class="blog-nav">
+                <a href="../blog.html">← Back to Blog</a>
+            </nav>
+            
+            <article class="blog-content">
+                <h1>QSEA: Agentic AI for Ocean Data Quality Control</h1>
+                
+                <div class="blog-meta">
+                    Published October 8 2025| By Emily O'Grady | 12 min read
+                </div>
+                
+                <!-- Social Sharing Section -->
+                <div class="social-sharing">
+                    <h4>Share this post</h4>
+                    <div class="sharing-buttons">
+                        <a href="#" class="share-btn twitter" data-share="twitter">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                            Tweet
+                        </a>
+                        <a href="#" class="share-btn linkedin" data-share="linkedin">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            Share
+                        </a>
+                        <a href="#" class="share-btn facebook" data-share="facebook">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Share
+                        </a>
+                        <a href="#" class="share-btn email" data-share="email">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email
+                        </a>
+                        <button class="share-btn copy" data-share="copy">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                            </svg>
+                            Copy Link
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Main Content Area - Replace with your blog content -->
+                <p>Automated ocean observing platforms, including autonomous underwater gliders, moorings, and Argo floats, are fundamental to modern oceanography. They provide high-resolution, multivariate time-series data at unprecedented scales, which are critical for understanding marine ecosystems, monitoring climate change, and managing the blue economy (Iles 2025). However, the sheer volume and complexity of the data produced by these platforms present a significant challenge for data management, particularly in the domain of Quality Control (QC). Current QC procedures are often reliant on semi-manual methods, which are labor-intensive, susceptible to human error, and struggle to keep pace with the continuous stream of incoming data (Mieruch 2021, Chouai 2023). This creates a bottleneck, leading to datasets that are inconsistently flagged, underutilized, and potentially compromised in their scientific integrity.
+The rapidly changing nature of the ocean due to anthropogenic pressures further complicates QC. Traditional methods often rely on comparisons to static climatological averages, which may no longer accurately represent ocean conditions, leading to the misidentification of true anomalies (Good 2023). Consequently, there is an urgent and well-recognized need within the oceanographic community to develop and implement advanced, automated, and intelligent digital solutions that can ensure the accuracy, reliability, and timeliness of scientific data (Good 2023).
+This project proposes to address this critical gap by exploring the potential of agentic Artificial Intelligence (AI) systems to enhance and ultimately automate the QC of oceanographic data. The central aim is to design, develop, and evaluate a scalable, interpretable, and user-centric AI-driven tool that augments, rather than replaces, expert judgment. We hypothesize that an agentic AI framework, capable of integrating multiple data streams, contextual information, and specialized machine learning models, can significantly improve the consistency, efficiency, and scalability of ocean data QC, thereby increasing the value and reliability of these critical datasets for scientific research.
+</p>
+                
+                <p>The application of Artificial Intelligence (AI) and Machine Learning (ML) is emerging as a powerful tool to address the limitations of traditional QC. The complexity of ocean data, with its non-linear relationships and spatio-temporal dependencies, makes it an ideal candidate for ML-based anomaly detection and data validation (Mieruch 2021).
+Several initiatives have begun to explore this domain. For instance, ML algorithms have been successfully developed to automate the QC of Argo float profiles (Zhang 2023, Suguira 2020), demonstrating the potential for consistent and rapid data processing. Similarly, projects like SalaciaML and CoTeDe have shown promise in using ML for the QC of time-series data (Mieruch 2021, Casteleo 2021). These "traditional" ML approaches, while effective for specific tasks and data types, are often limited by their narrow contextual window and input requirements, such as the standardized formats of Argo data. They may not easily adapt to the heterogeneous data produced by platforms like gliders, cabled observatories, and CTD casts.
+Recent work highlights these limitations. For example, attempts to use ML to define dynamic QC thresholds for temperature data have encountered difficulties because the models lack sufficient contextual information (ie, data from nearby locations or different depths) to make robust flagging decisions (pers. comm., Shayla Fitzsimmons, CIOOS). Likewise, ongoing efforts to apply ML to profile CTD data QC underscore the challenge of incorporating the nuanced, domain-specific knowledge of human experts into automated workflows (pers. comm., Anh Tran, MEDS-DFO). These examples reveal a critical gap: the need for a system that can reason about data quality holistically, integrating diverse data sources and expert heuristics into a cohesive framework (Acharya 2025). An agentic AI system, which can coordinate multiple specialized models and data sources, represents a significant improvement over isolated algorithms by enabling more complex, context-aware decision-making (Dehgann 2025).
+</p>
+                
+                <h2>Proposed Research and Methodology</h2>
+                
+                <p>This research will be conducted through the design, development, and validation of a prototype application, QSEA (Quality control with Smart, Explainable Agents). The project will be executed in the following phases:</p>
+
+                <h3>Phase 1: Core System</h3> 
+                    <p>The core application will be built using the Python Dash framework, leveraging its capabilities for creating interactive, web-based data visualization tools. The technical stack is chosen for its robustness and widespread adoption in the scientific computing community. Python Dash for the front-end user interface and application logic. Pandas, Xarray, and NumPy for efficient manipulation of multi-dimensional oceanographic data structures. The agentic AI will utilize a combination of established ML frameworks. We will explore models from Scikit-learn for baseline anomaly detection and more advanced architectures like LightGBM or PyTorch-based networks for complex pattern recognition. SalaciaML could also be used as a domain-specific base model where appropriate (Mieruch 2021). The agent will be designed to orchestrate these models, selecting the appropriate tool for a given QC task, potentially including physics-informed approaches (Xie 2023). Plotly will be used to generate interactive depth/time-series plots, anomaly visualizations, and user-feedback interfaces.
+                        A proof-of-concept Dash application already exists, providing a solid foundation of UI elements for manual QC and interactive flag review. This project will focus on integrating the agentic AI backend into this existing platform.
+
+                <h3>Phase 2: Agentic AI System</h3>
+                <p> The core innovation of this project is the development of an agentic AI system. This system will not be a single model but rather a coordinating agent that leverages a suite of specialized tools and data sources. The agent's workflow will be designed as follows: </p>
+                <ul>
+                    <li>Data Ingestion: The agent will ingest data from diverse sources, including glider missions, moorings, and public repositories like Argo.</li>
+                    <li>Tool Selection: Based on the data type and QC task, the agent will select and deploy appropriate ML models. For example, it may use a modified version of the SalaciaML algorithm for time-series anomaly detection on mooring data while employing a different spatial model to cross-validate a glider profile against nearby Argo floats.</li>
+                    <li>Contextual Enrichment: The agent will actively gather contextual information to inform its decisions. This includes fetching data from nearby points in space and time, where possible, comparing values across different sensors on the same platform, and eventually, incorporating meteorological or other environmental data. This directly addresses the context limitation of current models.</li>
+                    <li>Confidence-Scored Flagging: The agent will propose QC flags (following WOCE flag scheme) along with a confidence score and a brief summary of the reasoning used to determine the proposed flag. This score will be based on the agreement between different models and the strength of the evidence for a particular flag.</li>
+                    <li>Human-in-the-Loop: The QSEA interface will present the agent’s suggestions to a human expert, prioritizing points which have been flagged with low confidence. The user can accept, reject, or modify the flags. This expert feedback is crucial and will be used to retrain and refine the agent's models over time, creating a system that learns and adapts (Hughes 2025).</li>
+                </ul>
+                <h3>Phase 3: Validation and Case Study</h3>
+                <p>The system will be validated using historical datasets that have been previously manually quality-controlled, including glider missions, argo profiles and archived bottle data. We will compare the performance (accuracy, efficiency, consistency) of the agentic AI system against the manual QC results and simpler, non-agentic ML models. A case study will be conducted using a recent, high-value dataset (potentially BIO’s ~100 glider missions) to demonstrate the system's field-readiness and its ability to handle complex, real-world data challenges.
+</p>
+
+                <h3>Scientific Impact</h3>
+
+                <p>This project is poised to deliver significant contributions to the field of ocean data science:</p>
+                <ul>
+                    <li>A Field-Ready, Open-Source Platform: The primary output will be the QSEA application, an open-source tool that can be adopted by other research institutions, thereby enhancing the accessibility and scalability of advanced QC for ocean observing networks globally.</li>
+                    <li>Advancement in Applied AI: The research will provide a clearer understanding of how agentic AI can replicate and enhance expert judgment in complex data environments. It will serve as a model for applying "human-in-the-loop" AI to other scientific domains facing similar data quality challenges.</li>
+                    <li>Increased Data Value and Scientific Integrity: By improving the speed and reliability of QC, this work will increase the reliability of high-cost oceanographic datasets. Reliable data is foundational to robust scientific conclusions, particularly in high-priority fields such as fisheries management, marine protected area monitoring, and climate change research. The data which has been quality controlled through the case study will be shared with the research community through the marea (Tam, 2025) R package to promote the use of high quality ocean data in diverse applications.</li>
+                    <li>Foundation for Future Work: This project will lay the groundwork for future funding proposals and collaborative extensions with practical applications to various datasets. The established pipeline between the quality control system and data sharing platform marea (Tam, 2025) will provide a pathway for future ecological application of ocean data.</li>
+                    <li>By developing a novel agentic AI solution, this project directly addresses the need for digital leadership in navigating complex data landscapes. It promises to add significant value to the data underpinning Nova Scotia’s blue economy and to contribute a critical tool to the global oceanographic research community.</li>
+                </ul>
+</p>
+                
+                <h2>References</h2>
+                <ul>
+                    <li>Acharya, D. B., Kuppan, K., & Divya, B. (2025). Agentic AI: Autonomous intelligence for complex goals—A comprehensive survey. IEEE Access, 13, 18912-18936. https://doi.org/10.1109/ACCESS.2025.3532853</li>
+
+                    <li>Chouai, M., Simon Reimers, F., and Mieruch-Schnülle, S.: Deep learning to support ocean data quality control , EGU General Assembly 2023, Vienna, Austria, 24–28 Apr 2023, EGU23-15185, https://doi.org/10.5194/egusphere-egu23-15185.</li>
+
+                    <li>Castelão, G. (2021). A machine learning approach to quality control oceanographic data. Computers & Geosciences, 155, 104803. https://doi.org/10.1016/j.cageo.2021.104803</li>
+
+                    <li>Dehghan, K., & Feltham, A. (2025). Agentic AI in geoscience: Advancing predictive models for agile decision-making. In 86th EAGE Annual Conference & Exhibition (Vol. 2025, pp. 1-5). European Association of Geoscientists & Engineers. https://doi.org/10.3997/2214-4609.2025101096</li>
+
+                    <li>Good, S., Mills, B., Boyer, T., Bringas, F., Castelão, G., Cowley, R., Goni, G., Gouretski, V., & Domingues, C. M. (2023). Benchmarking of automatic quality control checks for ocean temperature profiles and recommendations for optimal sets. Frontiers in Marine Science, 9, 1075510. https://doi.org/10.3389/fmars.2022.1075510</li>
+
+                    <li>Hughes, L., Dwivedi, Y. K., Malik, T., Shawosh, M., Albashrawi, M. A., Jeon, I., … Walton, P. (2025). AI Agents and Agentic Systems: A Multi-Expert Analysis. Journal of Computer Information Systems, 1–29. https://doi.org/10.1080/08874417.2025.2483832</li>
+
+                    <li>Iles, R. L., DiMarco, S. F., Gold-Bouchot, G., & Knap, A. H. Diagnosing coastal processes using machine learning and ocean buoyancy gliders. Limnology and Oceanography. https://doi.org/10.1002/lno.12810</li>
+
+                    <li>Mieruch, S., Demirel, S., Simoncelli, S., Schlitzer, R., & Seitz, S. (2021). SalaciaML: A deep learning approach for supporting ocean data quality control. Frontiers in Marine Science, 8, 611742. https://doi.org/10.3389/fmars.2021.611742</li>
+
+                    <li>Pearlman, J., Bushnell, M., Coppola, L., Karstensen, J., Buttigieg, P. L., Pearlman, F., Simpson, P., Barbier, M., E., F., Pissierssens, P., Chandler, C., Hermes, J., Heslop, E., Jenkyns, R., Achterberg, E. P., Bensi, M., Bittig, H. C., Blandin, J., Bosch, J., . . . Whoriskey, F. (2019). Evolving and Sustaining Ocean Best Practices and Standards for the Next Decade. Frontiers in Marine Science, 6, 433901. https://doi.org/10.3389/fmars.2019.00277</li>
+
+                    <li>Sugiura, N., & Hosoda, S. (2020). Machine learning technique using the signature method for automated quality control of Argo profiles. Earth and Space Science, 7(9), e2019EA001019. https://doi.org/10.1029/2019EA001019</li>
+
+                    <li>Jamie C. Tam, Benoit Casault, Stephanie Clay et al. (2025). marea: Maritime Ecosystem Approach R Package. R package version 1.0.0. https://doi.org/10.5281/zenodo.15706086</li>
+
+                    <li>Xie, J., Jiang, H., Song, W., & Yang, J. (2023). A novel quality control method of time-series ocean wave observation data combining deep-learning prediction and statistical analysis. Journal of Sea Research, 195, 102439. https://doi.org/10.1016/j.seares.2023.102439</li>
+
+                    <li>Zhang, Q., Qian, C., & Dong, C. (2023). A machine learning approach to quality-control Argo temperature data. Atmospheric and Oceanic Science Letters, 16(4), 100292. https://doi.org/10.1016/j.aosl.2022.100292</li>
+
+</ul>
+                <!-- Second Social Sharing Section (bottom of post) -->
+                <div class="social-sharing">
+                    <h4>Enjoyed this post? Share it with others!</h4>
+                    <div class="sharing-buttons">
+                        <a href="#" class="share-btn twitter" data-share="twitter">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                            Tweet
+                        </a>
+                        <a href="#" class="share-btn linkedin" data-share="linkedin">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            Share
+                        </a>
+                        <a href="#" class="share-btn facebook" data-share="facebook">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Share
+                        </a>
+                        <a href="#" class="share-btn email" data-share="email">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email
+                        </a>
+                        <button class="share-btn copy" data-share="copy">
+                            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                            </svg>
+                            Copy Link
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Emily O'Grady. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="../images/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
+            <a href="#"><img src="../images/github.svg" alt="GitHub" class="social-icon"></a>
+            <a href="#"><img src="../images/email.svg" alt="Email" class="social-icon"></a>
+            <a href="#"><img src="../images/orcid.svg" alt="ORCID" class="social-icon"></a>
+        </div>
+    </footer>
+
+    <!-- Copy success notification -->
+    <div id="copySuccess" class="copy-success">
+        Link copied to clipboard!
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+
+            // Social sharing functionality
+            const shareButtons = document.querySelectorAll('[data-share]');
+            const pageUrl = window.location.href;
+            const pageTitle = document.title;
+            const pageDescription = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+
+            shareButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const platform = this.getAttribute('data-share');
+                    let shareUrl = '';
+                    
+                    switch(platform) {
+                        case 'twitter':
+                            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+                            break;
+                        case 'linkedin':
+                            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+                            break;
+                        case 'facebook':
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+                            break;
+                        case 'email':
+                            shareUrl = `mailto:?subject=${encodeURIComponent(pageTitle)}&body=${encodeURIComponent(pageDescription + '\n\n' + pageUrl)}`;
+                            break;
+                        case 'copy':
+                            navigator.clipboard.writeText(pageUrl).then(() => {
+                                showCopySuccess();
+                            });
+                            return;
+                    }
+                    
+                    if (shareUrl) {
+                        window.open(shareUrl, '_blank', 'width=600,height=400');
+                    }
+                });
+            });
+
+            function showCopySuccess() {
+                const successMsg = document.getElementById('copySuccess');
+                successMsg.classList.add('show');
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

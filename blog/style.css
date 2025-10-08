@@ -1,0 +1,252 @@
+/* Blog-specific styles for paged look and layout */
+
+/* Blog listing page styles */
+.blog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+
+.blog-post {
+    background: #ffffff;
+    margin-bottom: 3em;
+    padding: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(26, 42, 79, 0.08);
+    border: 1px solid #e8ecf0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(26, 42, 79, 0.12);
+}
+
+/* Paged look - subtle paper effect for blog listing */
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 8px;
+    right: 8px;
+    height: 100%;
+    background: #f8f9fb;
+    border-radius: 12px;
+    z-index: -1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.blog-post::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 16px;
+    right: 16px;
+    height: 100%;
+    background: #fafbfc;
+    border-radius: 12px;
+    z-index: -2;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.blog-post h3 {
+    color: #1a2a4f;
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    text-align: left;
+    border-bottom: 2px solid #f0f3f7;
+    padding-bottom: 0.5em;
+}
+
+.blog-post .meta {
+    font-size: 0.9em;
+    color: #6b7280;
+    margin-bottom: 1.2em;
+    font-style: italic;
+    border-left: 3px solid #2c61d3;
+    padding-left: 1em;
+    background: #f8fafc;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.blog-post p {
+    text-align: left;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1.5em;
+}
+
+.blog-post .read-more {
+    display: inline-block;
+    background: #2c61d3;
+    color: white;
+    padding: 0.7em 1.5em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background 0.3s ease;
+    margin-top: 1em;
+}
+
+.blog-post .read-more:hover {
+    background: #1a2a4f;
+    text-decoration: none;
+}
+
+/* Blog header styling */
+.blog-header {
+    text-align: center;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 3px solid #f0f3f7;
+}
+
+.blog-header h1 {
+    color: #1a2a4f;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.blog-header p {
+    font-size: 1.1em;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Individual blog post container styling */
+.blog-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3em;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(26, 42, 79, 0.08);
+    border: 1px solid #e8ecf0;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+/* Paged look for individual blog post */
+.blog-post-container::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 12px;
+    right: 12px;
+    height: 100%;
+    background: #f8f9fb;
+    border-radius: 12px;
+    z-index: -1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.blog-post-container::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 24px;
+    right: 24px;
+    height: 100%;
+    background: #fafbfc;
+    border-radius: 12px;
+    z-index: -2;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+/* Blog post content styling */
+.blog-meta {
+    font-size: 0.95em;
+    color: #6b7280;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #f0f3f7;
+    font-style: italic;
+}
+
+.blog-nav {
+    margin-bottom: 2em;
+}
+
+.blog-nav a {
+    color: #2c61d3;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.blog-nav a:hover {
+    color: #1a2a4f;
+    text-decoration: underline;
+}
+
+.blog-content h1 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: #1a2a4f;
+    text-align: left;
+}
+
+.blog-content p {
+    text-align: left;
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+}
+
+.blog-content h2, .blog-content h3 {
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.blog-footer {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 2px solid #f0f3f7;
+    text-align: center;
+}
+
+.blog-footer .tags {
+    margin-bottom: 1em;
+}
+
+.tag {
+    display: inline-block;
+    background: #f0f3f7;
+    color: #1a2a4f;
+    padding: 0.3em 0.8em;
+    border-radius: 20px;
+    font-size: 0.85em;
+    margin: 0.2em;
+    text-decoration: none;
+}
+
+.tag:hover {
+    background: #e8ecf0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 1.5em;
+        margin-bottom: 2em;
+    }
+    
+    .blog-post h3 {
+        font-size: 1.4em;
+    }
+    
+    .blog-header h1 {
+        font-size: 2em;
+    }
+    
+    .blog-post-container {
+        margin: 1em;
+        padding: 2em 1.5em;
+    }
+}
