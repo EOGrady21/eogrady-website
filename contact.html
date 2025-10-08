@@ -5,6 +5,97 @@
     <title>Contact Me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+         .profile-pic {
+    display: block;
+    margin: 2em auto 1em auto;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2a3a5c;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: #f7f9fc;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+.social-icon {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s, transform 0.2s;
+}
+.social-icon:hover {
+    filter: brightness(0.7) invert(0.7) sepia(1) hue-rotate(180deg) saturate(4);
+    transform: scale(1.12);
+}
+/* Contact form styling */
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    background: #f7f9fc;
+    padding: 2em 2em 1.5em 2em;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    color: #2a3a5c;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 0.7em;
+    border: 1.5px solid #b0bed9;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+    transition: border 0.2s;
+    resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid #2a3a5c;
+    outline: none;
+}
+.contact-form button[type="submit"] {
+    background: #2a3a5c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.9em;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5em;
+    transition: background 0.2s;
+}
+.contact-form button[type="submit"]:hover {
+    background: #23304a;
+}
+.email-icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5em 0 2em 0;
+}
+.email-icon {
+    width: 64px;
+    height: 64px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s, transform 0.2s;
+}
+.email-icon:hover {
+    filter: brightness(0.7) invert(0.7) sepia(1) hue-rotate(180deg) saturate(4);
+    transform: scale(1.12);
+}
+    </style>
 </head>
 <body>
     <header>
@@ -25,21 +116,24 @@
     <main>
         <section id="contact">
             <h2>Contact Me</h2>
-            <form action="#" method="post" class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+            <p style = "text-align: center;"> For project requests, media inquiries or curious minds! </p>
+            <img class = 'profile-pic' src="images/dp.jpg">
+            <div class="social-icons">
+            <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/eogrady21" target="_blank" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" aria-label="ORCID">
+                <img src="images/orcid.svg" alt="ORCID" class="social-icon">
+            </a>
+        </div>
+       <div class="email-icon-container">
+    <a href="mailto:emilyanne@dal.ca" aria-label="Email">
+        <img src="images/email.svg" alt="Email" class="email-icon">
+    </a>
+</div>
         </section>
     </main>
     <script>

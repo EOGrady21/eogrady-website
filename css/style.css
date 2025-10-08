@@ -1,5 +1,79 @@
-/* Basic styles for layout and demonstration */
-body { font-family: Arial, sans-serif; margin: 0; }
+/* Site-wide font and text styling */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #222e3a;
+    line-height: 1.7;
+    font-size: 1.08em;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Georgia', serif;
+    color: #1a2a4f;
+    font-weight: 700;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+        text-align: center;
+
+}
+
+h3 {
+    font-size: 1.4em;
+}
+p, ul, ol {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: #222e3a;
+    font-size: 1.08em;
+    margin-bottom: 1.2em;
+}
+
+ul, ol {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto 1.2em auto;
+    padding-left: 1.2em;
+}
+
+a {
+    color: #2c61d3;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover, a:focus {
+    color: #1a2a4f;
+    text-decoration: underline;
+}
+label {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    font-weight: 600;
+    color: #1a2a4f;
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+input, textarea, select, button {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    font-size: 1em;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -59,6 +133,11 @@ nav.active {
         padding: 0 1em;
         color:aliceblue;
     }
+    nav a:hover, nav a:focus {
+    background: #eaf2fb;   /* Light background on hover */
+    color: #1a2a4f;        /* Dark text for contrast */
+    text-decoration: none;
+}
 }
 .search-bar {
     display: flex;
@@ -69,111 +148,7 @@ nav.active {
     border-radius: 4px;
     border: none;
 }
-/* Project Spotlight styles */
-.spotlight {
-    margin: 2em 0;
-    overflow-x: auto;
-    white-space: nowrap;
-    background: aliceblue;
-    padding: 1em 0;
-}
-.carousel-container {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    max-width: 100%;
-    width: 90%; 
-    margin: 0 auto;
-    overflow: hidden; 
-    min-height: 420px;
-}
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #2c61d3;
-    color: #fff;
-    border: none;
-    font-size: 2em;
-    padding: 0.2em 0.5em;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 2;
-    transition: background 0.2s;
-    opacity: 0.8;
-}
-.carousel-btn.left {
-    left: 10px;
-}
-.carousel-btn.right {
-    right: 10px;
-}
-.carousel-btn:hover {
-    background: #23304a;
-    opacity: 1;
-}
-.carousel-track {
-    display: flex;
-    scroll-behavior: smooth;
-    transition: transform 0.3s;
-    align-items: stretch;
-    gap: 20px;
-}
-.project-slide {
-    min-width: 80%;
-    max-width: 80%;
-    min-height: 340px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 16px aliceblue;
-    padding: 2em;
-    gap: 2em;
-}
-.project-image {
-    width: 220px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    background: #eee;
-    flex-shrink: 0;
-}
-.project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    min-width: 0;
-    word-break: break-word;
-}
-.project-info h3 {
-    margin: 0 0 0.5em 0;
-    font-size: 2em;
-    color: #2a3a5c;
-}
-.project-info p {
-    margin: 0;
-    color: #333;
-    font-size: 1.2em;
-}
-@media (max-width: 700px) {
-    .carousel-track {
-        width: 95vw;
-    }
-    .project-slide, .project-slide {
-        min-width: 90vw;
-        max-width: 90vw;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em;
-        gap: 1em;
-    }
-    .project-image {
-        width: 90vw;
-        height: 180px;
-    }
-}
+
 /* Section styles */
 section {
     margin: 2em;
@@ -181,15 +156,16 @@ section {
     background: #f7f9fc;
     border-radius: 8px;
 }
-h2 {
-    margin-top: 0;
-}
+
 footer {
     background: #2a3a5c;
-    color: #fff;
+    color: aliceblue;
     text-align: center;
     padding: 1.5em 0 1em 0;
     margin-top: 2em;
+}
+footer p {
+    color: aliceblue; /* Ensure footer paragraph text is also lighter */
 }
 .social-icons {
     margin-top: 0.5em;

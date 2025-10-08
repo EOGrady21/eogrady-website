@@ -5,7 +5,169 @@
     <title>Emily O'Grady</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-   
+    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700|Merriweather:700&display=swap" rel="stylesheet">
+   <style>
+    /* Project Spotlight styles */
+.spotlight {
+    margin: 2em 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: aliceblue;
+    padding: 1em 0;
+}
+.carousel-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    max-width: 100%;
+    width: 90%; 
+    margin: 0 auto;
+    overflow: hidden; 
+    min-height: 420px;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c61d3;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background 0.2s;
+    opacity: 0.8;
+}
+.carousel-btn.left {
+    left: 10px;
+}
+.carousel-btn.right {
+    right: 10px;
+}
+.carousel-btn:hover {
+    background: #23304a;
+    opacity: 1;
+}
+.carousel-track {
+    display: flex;
+    scroll-behavior: smooth;
+    transition: transform 0.3s;
+    align-items: stretch;
+    gap: 20px;
+}
+.project-slide {
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 340px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px aliceblue;
+    padding: 2em;
+    gap: 2em;
+}
+.project-image {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #eee;
+    flex-shrink: 0;
+}
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+}
+.project-info h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 2em;
+    color: #2a3a5c;
+}
+.project-info p {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2em;
+    max-width: 900px;
+    margin: 0 auto 2em auto;
+    text-align: left;
+}
+
+.profile-pic {
+    display: block;
+    margin: 0;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2a3a5c;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    background: #f7f9fc;
+    flex-shrink: 0;
+}
+
+.about-flex p {
+    margin-top: 0;
+    align-self: center;
+    font-size: 1.15em;
+    line-height: 1.7;
+}
+.quote-btn {
+    display: inline-block;
+    background: #2c61d3;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0.8em 2em;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1em;
+    box-shadow: 0 2px 8px rgba(44,97,211,0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+.quote-btn:hover, .quote-btn:focus {
+    background: #e7ecf5;
+    transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 700px) {
+    .carousel-track {
+        width: 95vw;
+    }
+    .project-slide, .project-slide {
+        min-width: 90vw;
+        max-width: 90vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        gap: 1em;
+    }
+    .project-image {
+        width: 90vw;
+        height: 180px;
+    }
+       .about-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-flex p {
+        align-self: auto;
+    }
+}
+   </style>
 </head>
 <body>
     <header>
@@ -62,16 +224,22 @@
         </div>
         <button class="carousel-btn right" aria-label="Next">&#8594;</button>
     </div>
+    <div style="text-align: center; margin-top: 2em;">
+        <a href="contact.html" class="quote-btn">Get a project quote</a>
+    </div>
 </section>
 
         <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
-            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <div class = 'about-flex'>
+            <img src="images/dp.jpg" alt="Profile Picture" class="profile-pic">
             <p>
                 <!-- Your bio goes here -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                bio text summary ... Emily O'Grady ..... Marine data Scientist
             </p>
+            </section>
+        </div>
         </section>
 
         <!-- Publications -->
