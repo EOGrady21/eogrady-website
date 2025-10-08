@@ -101,7 +101,7 @@ header {
 nav {
     display: none;
     flex-direction: column;
-    background: #425c8e;
+    background: #2a3a5c;
     color: #fff;
     position: absolute;
     top: 60px;
@@ -111,6 +111,20 @@ nav {
 }
 nav.active {
     display: flex;
+}
+
+/* Dropdown nav link styling for mobile */
+nav a {
+    color: #fff;
+    padding: 1em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover, nav a:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
 }
 
 /* On larger screens, show nav links inline and hide hamburger */
