@@ -24,6 +24,32 @@
     overflow: hidden; 
     min-height: 420px;
 }
+
+/* Enable scrolling on touch devices */
+@media (pointer: coarse) {
+    .carousel-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .carousel-track {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        transform: none !important; /* Disable transform on touch devices */
+    }
+    
+    .project-slide {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    
+    .carousel-controls {
+        display: none; /* Hide arrow buttons on touch devices */
+    }
+}
 .carousel-controls {
     display: flex;
     justify-content: center;
@@ -53,6 +79,25 @@
     align-items: stretch;
     gap: 20px;
     padding-left: 5vw;
+}
+
+/* Scrollbar styling for better UX on touch devices */
+.carousel-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-track::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+    background: #2c61d3;
+    border-radius: 4px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb:hover {
+    background: #23304a;
 }
 .project-slide {
     display: flex;
@@ -158,6 +203,9 @@
     .carousel-container {
         margin: 0;
         padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
     }
     .carousel-track {
         width: 100vw;
@@ -165,6 +213,11 @@
         padding-left: 1em;
         padding-right: 1em;
         box-sizing: border-box;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        transform: none !important; /* Disable transform on mobile */
     }
      .project-slide {
         flex-direction: column;
@@ -176,6 +229,8 @@
         gap: 1em;
         margin-right: 1em;
         box-sizing: border-box;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
     .project-image {
         width: 100%;
@@ -191,11 +246,47 @@
     .carousel-controls {
         margin-top: 1.5em;
         padding: 0 1em;
+        display: none; /* Hide arrow buttons on mobile - users can swipe */
     }
     .carousel-btn {
         font-size: 1.2em;
         padding: 0.5em 1em;
     }
+    .spotlight {
+        margin: 1em 0;
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) and (min-width: 701px) {
+    .carousel-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .carousel-track {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .project-slide {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-width: calc(70vw - 2em);
+        width: calc(70vw - 2em);
+    }
+    
+    /* Hide controls on touch devices */
+    .carousel-controls {
+        display: none;
+    }
+}
+
+/* Complete the previous media query properly */
+@media (max-width: 700px) {
     .spotlight {
         margin: 1em 0;
         padding: 1em 0;
@@ -329,7 +420,14 @@
     const projects = document.querySelectorAll('.carousel-track .project-slide');
     const btnLeft = document.querySelector('.carousel-btn.left');
     const btnRight = document.querySelector('.carousel-btn.right');
+    const carouselControls = document.querySelector('.carousel-controls');
     let currentIndex = 0;
+
+    // Check if device supports touch
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Check screen size
+    const isMobileOrTablet = window.innerWidth <= 1024;
 
     function getSlideWidth() {
         const slide = projects[0];
@@ -340,25 +438,46 @@
     }
 
     function updateCarousel() {
-        const slideWidth = getSlideWidth();
-        track.style.transform = `translateX(-${currentIndex * slideWidth + 10}px)`;
+        // Only use transform if not on touch device or mobile/tablet
+        if (!isTouchDevice && !isMobileOrTablet) {
+            const slideWidth = getSlideWidth();
+            track.style.transform = `translateX(-${currentIndex * slideWidth + 10}px)`;
+        }
     }
 
-    btnLeft.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
+    // Hide controls on touch devices or mobile/tablet
+    if (isTouchDevice || isMobileOrTablet) {
+        if (carouselControls) {
+            carouselControls.style.display = 'none';
+        }
+        // Remove transform to enable native scrolling
+        track.style.transform = 'none';
+    } else {
+        // Desktop functionality with buttons
+        btnLeft.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        btnRight.addEventListener('click', () => {
+            if (currentIndex < projects.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        updateCarousel(); // Ensure it starts at the first slide
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newIsMobileOrTablet = window.innerWidth <= 1024;
+        if (newIsMobileOrTablet !== isMobileOrTablet) {
+            location.reload(); // Simple way to handle responsive changes
         }
     });
-
-    btnRight.addEventListener('click', () => {
-        if (currentIndex < projects.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    updateCarousel(); // Ensure it starts at the first slide
 });
     </script>
 </body>
