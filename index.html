@@ -24,26 +24,23 @@
     overflow: hidden; 
     min-height: 420px;
 }
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
     background: #2c61d3;
     color: #fff;
     border: none;
-    font-size: 2em;
-    padding: 0.2em 0.5em;
+    font-size: 1.5em;
+    padding: 0.4em 0.8em;
     cursor: pointer;
-    border-radius: 50%;
-    z-index: 2;
+    border-radius: 8px;
     transition: background 0.2s;
-    opacity: 0.8;
-}
-.carousel-btn.left {
-    left: 10px;
-}
-.carousel-btn.right {
-    right: 10px;
+    opacity: 0.9;
 }
 .carousel-btn:hover {
     background: #23304a;
@@ -158,18 +155,27 @@
     transform: translateY(-2px) scale(1.03);
 }
 @media (max-width: 700px) {
+    .carousel-container {
+        margin: 0;
+        padding: 0;
+    }
     .carousel-track {
-        width: 95vw;
+        width: 100vw;
         min-width: 0;
+        padding-left: 1em;
+        padding-right: 1em;
+        box-sizing: border-box;
     }
      .project-slide {
         flex-direction: column;
         align-items: stretch;
-        min-width: 90vw;
-        max-width: 98vw;
-        width: 98vw;
+        min-width: calc(100vw - 5em);
+        max-width: calc(100vw - 5em);
+        width: calc(100vw - 5em);
         padding: 1em;
         gap: 1em;
+        margin-right: 1em;
+        box-sizing: border-box;
     }
     .project-image {
         width: 100%;
@@ -181,6 +187,19 @@
     .project-info {
         text-align: left;
         align-items: flex-start;
+    }
+    .carousel-controls {
+        margin-top: 1.5em;
+        padding: 0 1em;
+    }
+    .carousel-btn {
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+    }
+    .spotlight {
+        margin: 1em 0;
+        padding: 1em 0;
+        /* overflow-x: hidden; */
     }
        .about-flex {
         flex-direction: column;
@@ -210,11 +229,24 @@
     </header>
 
     <main>
+         <!-- About Me -->
+        <section id="about">
+            <h2>Emily O'Grady</h2>
+            <div class = 'about-flex'>
+            <img src="images/dp.jpg" alt="Profile Picture" class="profile-pic">
+            <div>
+                <p>
+                    Hi, I'm Emily O'Grady, a marine data scientist passionate about bridging technology and ocean science. Currently pursuing my Masters of Digital Innovation at Dalhousie University, I combine expertise in oceanographic data management with emerging technologies like AI to advance marine research. At the Bedford Institute of Oceanography, I lead data initiatives, develop R packages used nationally, and champion open science practices.
+                </p>
+                <a href="about.html" class="quote-btn">Learn More</a>
+            </div>
+            </div>
+        </section>
+
         <!-- Project Spotlight -->
         <section class="spotlight">
     <h2>Project Spotlight</h2>
     <div class="carousel-container">
-        <button class="carousel-btn left" aria-label="Previous">&#8592;</button>
         <div class="carousel-track">
             <div class="project-slide">
                 <img src="images/project1.jpg" alt="Project 1 Screenshot" class="project-image">
@@ -246,6 +278,9 @@
             </div>
             <!-- Add more project-slide blocks as needed -->
         </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="carousel-btn left" aria-label="Previous">&#8592;</button>
         <button class="carousel-btn right" aria-label="Next">&#8594;</button>
     </div>
     <div style="text-align: center; margin-top: 2em;">
@@ -253,19 +288,7 @@
     </div>
 </section>
 
-        <!-- About Me -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class = 'about-flex'>
-            <img src="images/dp.jpg" alt="Profile Picture" class="profile-pic">
-            <div>
-                <p>
-                    Hi, I'm Emily O'Grady, a marine data scientist passionate about bridging technology and ocean science. Currently pursuing my Masters of Digital Innovation at Dalhousie University, I combine expertise in oceanographic data management with emerging technologies like AI to advance marine research. At the Bedford Institute of Oceanography, I lead data initiatives, develop R packages used nationally, and champion open science practices.
-                </p>
-                <a href="about.html" class="quote-btn">Learn More</a>
-            </div>
-            </div>
-        </section>
+       
 
         <!-- Publications -->
         <section id="publications">
@@ -318,7 +341,7 @@
 
     function updateCarousel() {
         const slideWidth = getSlideWidth();
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        track.style.transform = `translateX(-${currentIndex * slideWidth + 10}px)`;
     }
 
     btnLeft.addEventListener('click', () => {
