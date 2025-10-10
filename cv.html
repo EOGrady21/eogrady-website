@@ -18,8 +18,16 @@
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
+        <div class="header-social">
+            <a href="https://github.com/eogrady21" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+                <img src="images/orcid.svg" alt="ORCID" class="social-icon">
+            </a>
         </div>
     </header>
     <main>
@@ -31,25 +39,23 @@
         </section>
         <section id="education">
             <h2>Education</h2>
-            <ul>
+            <ul class="cv-list">
                 <li>
-                    <strong>Bachelor of Science </strong>, <em> Ocean Science</em>, Dalhousie University, 2018<br>
-                    
+                    <strong>Bachelor of Science</strong>, <em>Ocean Science</em>, Dalhousie University, 2018
                 </li>
                 <li>
-                    <strong>Master of Digital Innovation </strong>, <em> Faculty of Computer Science</em>, Dalhousie University, 2027<br>
-                    <strong>[Data Science Certificate] </strong> <br>
-                    <strong>Thesis:</strong>, "Agentic AI for Oceanographic Data Quality Control" <br>
+                    <strong>Master of Digital Innovation</strong>, <em>Faculty of Computer Science</em>, Dalhousie University, 2027<br>
+                    <strong>[Data Science Certificate]</strong><br>
+                    <strong>Thesis:</strong> "Agentic AI for Oceanographic Data Quality Control"<br>
                     <em>Advisor: Dr. Christopher Whidden & Dr. Clark Richards</em>
                 </li>
-                <!-- Add more education entries as needed -->
             </ul>
         </section>
         <section id="experience">
             <h2>Professional Experience</h2>
             
-            <h3>2024 - Present</h3>
-            <ul>
+            <h3>Current Role</h3>
+            <ul class="cv-list">
                 <li><strong>Chair, R & Git Support Group</strong> - Bedford Institute of Oceanography
                     <ul>
                         <li>Lead AtlanticR/R_Git_Support initiative serving national community</li>
@@ -57,7 +63,7 @@
                         <li>Provide training on functionalizing R code, creating packages, and AI strategies</li>
                     </ul>
                 </li>
-                <li><strong>Chair, BioChem Steering Committee</strong> - National leadership role</li>
+                <li><strong>Co-Chair, BioChem Steering Committee</strong> - National leadership role</li>
                 <li><strong>Social Chair, Connect! Professional Network</strong></li>
                 <li><strong>BioChem Workshop Facilitator</strong> - 25+ participants nationally</li>
                 <li><strong>BioCheck Shiny App Developer</strong></li>
@@ -68,57 +74,53 @@
                         <li>Updated database and archival protocols for BioChem to match international best practices</li>
                     </ul>
                 </li>
-                <li><strong>Co-Author, CODAP-NA v2</strong> - Oceanographic data product (NOAA)</li>
                 <li><strong>marea: R package</strong> - R package development lead creating S4 generic classes to improve ecosystem data adoption in fisheries reporting</li>
             </ul>
 
             <h3>2025 Highlights</h3>
-            <ul>
-                <li><strong>Fall 2025: </strong>
-                    <br>
-                    <ul>
-                        <li> AI recipes for ocean science - Divisional presentation</li>
-                        <li> AZMP Fall Mission</li>
-                        <li>BIO Friday Seminar series: marea presentation</li>
-                        <li>Hosted & organized Panel Discussion: AI Solutions for Science (national)</li>
-                        <li>Started Masters of Digital Innovation Program at Dalhousie University</li>
-                        <li>Marea R package successfully launched</li>
-                    </ul>
-                </li>
-                <li><strong>Summer 2025:</strong> 
-                    <ul>
-                        <li>Quality control of long term monitoring program bottle data (AZMP, AZOMP, Davis Strait, BBMP)</li>
-                        <li>Submission and archival of maritime data to international platforms (OCADS, CCHDO, SDG14.3.1)</li>
-                        <li>Review and Science management of BioChem (Oracle SQL database)</li>
-                    </ul>
-                </li>
-                <li><strong>Spring 2025:</strong> 
-                    <ul>
-                        <li>Review of AZMP tech report</li>
-                        <li>BioChem workshop for Pacific region</li>
-                    </ul>
-                </li>
-                <li><strong>Winter 2025:</strong> 
-                    <ul>
-                        <li>Co-author on Image Classification paper (submitted)</li>
-                        <li>Co-Author CODAP-NA v2</li>
-                        <li>Archival of bioness data</li>
-                        <li>Open science learning series presentation: "The art of asking for help"</li>
-                    </ul>
-                </li>
+            
+            <div class="cv-period">Fall 2025</div>
+            <ul class="cv-list">
+                <li>AI recipes for ocean science - Divisional presentation</li>
+                <li>AZMP Fall Mission</li>
+                <li>BIO Friday Seminar series: marea presentation</li>
+                <li>Hosted & organized Panel Discussion: AI Solutions for Science (national)</li>
+                <li>Started Masters of Digital Innovation Program at Dalhousie University</li>
+                <li>Marea R package successfully launched</li>
+            </ul>
+
+            <div class="cv-period">Summer 2025</div>
+            <ul class="cv-list">
+                <li>Quality control of long term monitoring program bottle data (AZMP, AZOMP, Davis Strait, BBMP)</li>
+                <li>Submission and archival of maritime data to international platforms (OCADS, CCHDO, SDG14.3.1)</li>
+                <li>Review and Science management of BioChem (Oracle SQL database)</li>
+            </ul>
+
+            <div class="cv-period">Spring 2025</div>
+            <ul class="cv-list">
+                <li>Review of AZMP tech report</li>
+                <li>BioChem workshop for Pacific region</li>
+            </ul>
+
+            <div class="cv-period">Winter 2025</div>
+            <ul class="cv-list">
+                <li>Co-author on Image Classification paper (submitted)</li>
+                <li>Co-Author CODAP-NA v2</li>
+                <li>Archival of bioness data</li>
+                <li>Open science learning series presentation: "The art of asking for help"</li>
             </ul>
 
             <h3>2023 - 2024</h3>
-            <ul>
+            <ul class="cv-list">
                 <li><strong>Responsible AI Working Group Member</strong></li>
                 <li><strong>Science Communication Training:</strong> Science made simple program (ECCC)</li>
                 <li><strong>Python Training</strong> - University of Washington</li>
-                <li><strong>Peer Review:</strong>Multiple papers on plankton imaging techniques</li>
+                <li><strong>Peer Review:</strong> Multiple papers on plankton imaging techniques</li>
                 <li><strong>Research Collaboration:</strong> Special acknowledgment in publication (link)</li>
             </ul>
 
             <h3>2020 - 2022</h3>
-            <ul>
+            <ul class="cv-list">
                 <li><strong>R Package Developer:</strong> Published vprr on CRAN (April 2021)</li>
                 <li><strong>Science Information Exchange:</strong> sGSL hydrography presentation</li>
                 <li><strong>VPR Shiny App Developer</strong></li>
@@ -129,7 +131,7 @@
             </ul>
 
             <h3>2018 - 2019</h3>
-            <ul>
+            <ul class="cv-list">
                 <li><strong>Technical Documentation Author:</strong> 
                     <ul>
                         <li>Moored ADCP processing guide and accompanying R package (used nationally)</li>
@@ -142,26 +144,23 @@
         </section>
         <section id="skills">
             <h2>Skills</h2>
-            <ul>
-                <li><strong>Programming:</strong> Python, R, MatLab, HTML, CSS, JS,</li>
-                <li>Databases & queries - Oracle SQL</li>
-                <li>Oceanographic field work - CTD, Niskin Bottles, Imaging equipment deployment, lab analysis, metadata collection</li>
-                <li>Fisheries field work - Netting & electrofishing, metadata collection, riparian habitat assessment, water quality measurements</li>
-                <li>Data visualization - Matplotlib,  ggplot2</li>
-                <li>Machine Learning - Scikit-learn, TensorFlow, Keras</li>
-                <li>Data Wrangling - Pandas, NumPy, tidyverse</li>
-                <li>Dashboards - Shiny, Dash, PowerBI</li>
-                <li>Version Control - Git, GitHub</li> 
-                <li>Other -  MS Office, Google Workspace</li>
-
+            <ul class="cv-list">
+                <li><strong>Programming:</strong> Python, R, MatLab, HTML, CSS, JS</li>
+                <li><strong>Databases & queries:</strong> Oracle SQL</li>
+                <li><strong>Oceanographic field work:</strong> CTD, Niskin Bottles, Imaging equipment deployment, lab analysis, metadata collection</li>
+                <li><strong>Fisheries field work:</strong> Netting & electrofishing, metadata collection, riparian habitat assessment, water quality measurements</li>
+                <li><strong>Data visualization:</strong> Matplotlib, ggplot2</li>
+                <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow, Keras</li>
+                <li><strong>Data Wrangling:</strong> Pandas, NumPy, tidyverse</li>
+                <li><strong>Dashboards:</strong> Shiny, Dash, PowerBI</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li> 
+                <li><strong>Other:</strong> MS Office, Google Workspace</li>
             </ul>
         </section>
         <section id="publications">
             <h2>Publications</h2>
-            <ul>
+            <ul class="cv-list">
                <li>vprr (R package) - <em>CRAN</em>, 2022 <a href="https://github.com/EOGrady21/vprr">View on GitHub</a></li>
-        
-                <!-- Add more publications as needed -->
             </ul>
         </section>
     </main>

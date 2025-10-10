@@ -1,21 +1,60 @@
 /* Blog-specific styles for paged look and layout */
 
-/* Blog listing page styles */
+/* Blog listing page styles - Masonry Grid */
 .blog-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2em 1em;
+    columns: 2;
+    column-gap: 3em;
+    column-fill: balance;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        columns: 1;
+        column-gap: 1.5em;
+        padding: 2em 2em;
+    }
+    
+    .blog-post {
+        margin-bottom: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-container {
+        padding: 1.5em 1.5em;
+    }
+    
+    .blog-post {
+        padding: 1.5em;
+        margin-bottom: 2em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-container {
+        columns: 3;
+        column-gap: 3.5em;
+    }
 }
 
 .blog-post {
     background: #ffffff;
     margin-bottom: 3em;
-    padding: 2.5em;
+    padding: 2em;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(26, 42, 79, 0.08);
     border: 1px solid #e8ecf0;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    break-inside: avoid;
+    page-break-inside: avoid;
 }
 
 .blog-post:hover {
@@ -215,20 +254,7 @@
     margin-bottom: 1em;
 }
 
-.tag {
-    display: inline-block;
-    background: #f0f3f7;
-    color: #1a2a4f;
-    padding: 0.3em 0.8em;
-    border-radius: 20px;
-    font-size: 0.85em;
-    margin: 0.2em;
-    text-decoration: none;
-}
 
-.tag:hover {
-    background: #e8ecf0;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

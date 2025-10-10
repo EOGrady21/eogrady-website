@@ -28,58 +28,13 @@
     height: 48px;
     filter: brightness(0) invert(1);
     transition: filter 0.2s, transform 0.2s;
+    color: #2a3a5c;
 }
 .social-icon:hover {
     filter: brightness(0.7) invert(0.7) sepia(1) hue-rotate(180deg) saturate(4);
     transform: scale(1.12);
 }
-/* Contact form styling */
-.contact-form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-    background: #f7f9fc;
-    padding: 2em 2em 1.5em 2em;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-}
-.contact-form label {
-    font-weight: bold;
-    margin-bottom: 0.3em;
-    color: #2a3a5c;
-}
-.contact-form input,
-.contact-form textarea {
-    padding: 0.7em;
-    border: 1.5px solid #b0bed9;
-    border-radius: 6px;
-    font-size: 1em;
-    background: #fff;
-    transition: border 0.2s;
-    resize: vertical;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border: 1.5px solid #2a3a5c;
-    outline: none;
-}
-.contact-form button[type="submit"] {
-    background: #2a3a5c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 0.9em;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 0.5em;
-    transition: background 0.2s;
-}
-.contact-form button[type="submit"]:hover {
-    background: #23304a;
-}
+
 .email-icon-container {
     display: flex;
     justify-content: center;
@@ -109,31 +64,43 @@
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
+        <div class="header-social">
+            <a href="https://github.com/eogrady21" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+                <img src="images/orcid.svg" alt="ORCID" class="social-icon">
+            </a>
         </div>
     </header>
     <main>
         <section id="contact">
             <h2>Contact Me</h2>
-            <p style = "text-align: center;"> For project requests, media inquiries or curious minds! </p>
-            <img class = 'profile-pic' src="images/dp.jpg">
-            <div class="social-icons">
-            <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" aria-label="LinkedIn">
-                <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://github.com/eogrady21" target="_blank" aria-label="GitHub">
-                <img src="images/github.svg" alt="GitHub" class="social-icon">
-            </a>
-            <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" aria-label="ORCID">
-                <img src="images/orcid.svg" alt="ORCID" class="social-icon">
-            </a>
-        </div>
-       <div class="email-icon-container">
-    <a href="mailto:emilyanne@dal.ca" aria-label="Email">
-        <img src="images/email.svg" alt="Email" class="email-icon">
-    </a>
-</div>
+            <div class="contact-container">
+                <div class="contact-profile">
+                    <img class="contact-profile-pic" src="images/dp.jpg" alt="Emily O'Grady">
+                    <p class="contact-blurb">For project requests, media inquiries or curious minds!</p>
+                </div>
+                <div class="contact-links">
+                    <div class="contact-social-icons">
+                        <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" aria-label="LinkedIn" class="contact-social-link">
+                            <img src="images/linkedin.svg" alt="LinkedIn" class="contact-social-icon">
+                        </a>
+                        <a href="https://github.com/eogrady21" target="_blank" aria-label="GitHub" class="contact-social-link">
+                            <img src="images/github.svg" alt="GitHub" class="contact-social-icon">
+                        </a>
+                        <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" aria-label="ORCID" class="contact-social-link">
+                            <img src="images/orcid.svg" alt="ORCID" class="contact-social-icon">
+                        </a>
+                        <a href="mailto:emilyanne@dal.ca" aria-label="Email" class="contact-social-link">
+                            <img src="images/email.svg" alt="Email" class="contact-social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script>
