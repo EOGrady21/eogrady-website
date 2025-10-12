@@ -1,0 +1,82 @@
+/**
+ * About Page Specific Styles
+ * 
+ * Handles the about page layout with flexible container,
+ * text content, and image gallery grid system.
+ */
+
+/* =============================================================================
+   About Page Layout
+   ============================================================================= */
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 2em auto;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 2 1 300px;
+    min-width: 280px;
+}
+
+/* =============================================================================
+   About Page Image Gallery
+   ============================================================================= */
+
+.about-gallery {
+    flex: 3 1 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.about-gallery img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-gallery img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* =============================================================================
+   About Page Responsive Design
+   ============================================================================= */
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .about-gallery {
+        justify-content: flex-start;
+    }
+    
+    .about-gallery img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-gallery {
+        justify-content: center;
+    }
+    
+    .about-gallery img {
+        width: 140px;
+        height: 140px;
+    }
+}

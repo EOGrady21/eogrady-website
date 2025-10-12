@@ -5,46 +5,7 @@
     <title>Emily OGrady | About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-   
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2em;
-            max-width: 1200px;
-            margin: 2em auto;
-            align-items: flex-start;
-        }
-        .about-text {
-            flex: 2 1 300px;
-            min-width: 280px;
-        }
-        .about-gallery {
-            flex: 3 1 400px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-            justify-content: center;
-        }
-        .about-gallery img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            background: #eee;
-        }
-        @media (max-width: 900px) {
-            .about-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .about-gallery {
-                justify-content: flex-start;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
     <header>
@@ -89,25 +50,15 @@
                     </p>
                 </div>
                 <div class="about-gallery">
-                    <img src="images/photo1.jpg" alt="Description 1">
-                    <img src="images/photo2.jpg" alt="Description 2">
-                    <img src="images/photo3.jpg" alt="Description 3">
-                    <img src="images/photo4.jpg" alt="Description 4">
-                    <img src="images/photo5.jpg" alt="Description 5">
+                    <img src="images/fishing.png" alt="Electrofishing - field work">
+                    <img src="images/rosette.jpg" alt="BBMP Rosette">
+                    <img src="images/scuba.jpg" alt="Scuba Diving - field work">
+                    <img src="images/surf.jpg" alt="Surfing - lawrencetown">
                     <!-- Add more images as needed -->
                 </div>
             </div>
         </section>
     </main>
-    <script>
-        // Hamburger menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const nav = document.getElementById('nav');
-            hamburger.addEventListener('click', function() {
-                nav.classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

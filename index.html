@@ -5,309 +5,16 @@
     <title>Emily O'Grady</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700|Merriweather:700&display=swap" rel="stylesheet">
-   <style>
-    /* Project Spotlight styles */
-.spotlight {
-    margin: 2em 0;
-    overflow-x: auto;
-    white-space: nowrap;
-    background: aliceblue;
-    padding: 1em 0;
-}
-.carousel-container {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden; 
-    min-height: 420px;
-}
-
-/* Enable scrolling on touch devices */
-@media (pointer: coarse) {
-    .carousel-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-    
-    .carousel-track {
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        transform: none !important; /* Disable transform on touch devices */
-    }
-    
-    .project-slide {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-    
-    .carousel-controls {
-        display: none; /* Hide arrow buttons on touch devices */
-    }
-}
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
-}
-.carousel-btn {
-    position: static;
-    background: #2c61d3;
-    color: #fff;
-    border: none;
-    font-size: 1.5em;
-    padding: 0.4em 0.8em;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.2s;
-    opacity: 0.9;
-}
-.carousel-btn:hover {
-    background: #23304a;
-    opacity: 1;
-}
-.carousel-track {
-    display: flex;
-    scroll-behavior: smooth;
-    transition: transform 0.3s;
-    align-items: stretch;
-    gap: 20px;
-    padding-left: 5vw;
-}
-
-/* Scrollbar styling for better UX on touch devices */
-.carousel-track::-webkit-scrollbar {
-    height: 8px;
-}
-
-.carousel-track::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1);
-    border-radius: 4px;
-}
-
-.carousel-track::-webkit-scrollbar-thumb {
-    background: #2c61d3;
-    border-radius: 4px;
-}
-
-.carousel-track::-webkit-scrollbar-thumb:hover {
-    background: #23304a;
-}
-.project-slide {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    min-width: 600px;
-    max-width: 900px;
-    width: 80vw;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 16px aliceblue;
-    padding: 2em;
-    gap: 2em;
-    box-sizing: border-box;
-    overflow: visible;
-    min-height: 220px;
-    word-break: break-word;
-}
-
-.project-image {
-    width: 220px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    background: #eee;
-    flex-shrink: 0;
-    align-self: flex-start;
-    display: block;
-}
-.project-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
-    min-width: 0;
-    word-break: break-word;
-    text-align: left;
-}
-
-.project-info h3 {
-    margin: 0 0 0.5em 0;
-    font-size: 2em;
-    color: #2a3a5c;
-    word-break: break-word;
-}
-
-.project-info p {
-    margin: 0;
-    color: #333;
-    font-size: 1.2em;
-    word-break: break-word;
-    white-space: normal;
-}
-
-.about-flex {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 2em;
-    max-width: 900px;
-    margin: 0 auto 2em auto;
-    text-align: left;
-}
-
-.profile-pic {
-    display: block;
-    margin: 0;
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #2a3a5c;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    background: #f7f9fc;
-    flex-shrink: 0;
-}
-
-.about-flex p {
-    margin-top: 0;
-    align-self: center;
-    font-size: 1.15em;
-    line-height: 1.7;
-}
-.quote-btn {
-    display: inline-block;
-    background: #2c61d3;
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: 0.8em 2em;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 1em;
-    box-shadow: 0 2px 8px rgba(44,97,211,0.10);
-    transition: background 0.2s, transform 0.2s;
-}
-.quote-btn:hover, .quote-btn:focus {
-    background: #e7ecf5;
-    transform: translateY(-2px) scale(1.03);
-}
-@media (max-width: 700px) {
-    .carousel-container {
-        margin: 0;
-        padding: 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-    .carousel-track {
-        width: 100vw;
-        min-width: 0;
-        padding-left: 1em;
-        padding-right: 1em;
-        box-sizing: border-box;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        transform: none !important; /* Disable transform on mobile */
-    }
-     .project-slide {
-        flex-direction: column;
-        align-items: stretch;
-        min-width: calc(100vw - 5em);
-        max-width: calc(100vw - 5em);
-        width: calc(100vw - 5em);
-        padding: 1em;
-        gap: 1em;
-        margin-right: 1em;
-        box-sizing: border-box;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-    .project-image {
-        width: 100%;
-        max-width: 100%;
-        height: 180px;
-        margin: 0 auto 1em auto;
-        display: block;
-    }
-    .project-info {
-        text-align: left;
-        align-items: flex-start;
-    }
-    .carousel-controls {
-        margin-top: 1.5em;
-        padding: 0 1em;
-        display: none; /* Hide arrow buttons on mobile - users can swipe */
-    }
-    .carousel-btn {
-        font-size: 1.2em;
-        padding: 0.5em 1em;
-    }
-    .spotlight {
-        margin: 1em 0;
-    }
-}
-
-/* Tablet styles */
-@media (max-width: 1024px) and (min-width: 701px) {
-    .carousel-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-    
-    .carousel-track {
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .project-slide {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-        min-width: calc(70vw - 2em);
-        width: calc(70vw - 2em);
-    }
-    
-    /* Hide controls on touch devices */
-    .carousel-controls {
-        display: none;
-    }
-}
-
-/* Complete the previous media query properly */
-@media (max-width: 700px) {
-    .spotlight {
-        margin: 1em 0;
-        padding: 1em 0;
-        /* overflow-x: hidden; */
-    }
-       .about-flex {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .about-flex p {
-        align-self: auto;
-    }
-}
-   </style>
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700|Merriweather:700|Kalam:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="menu">
             <span id="hamburger" class="hamburger">&#9776;</span>
             <nav id="nav">
+                <a href="index.html">Home</a>
                 <a href="cv.html">CV</a>
                 <a href="about.html">About Me</a>
                 <a href="blog.html">Blog</a>
@@ -327,181 +34,139 @@
         </div>
     </header>
 
-    <main>
-         <!-- About Me -->
-        <section id="about">
-            <h2>Emily O'Grady</h2>
-            <div class = 'about-flex'>
-            <img src="images/dp.jpg" alt="Profile Picture" class="profile-pic">
-            <div>
+    <main role="main">
+        <!-- Hero Section -->
+        <section id="hero" aria-label="Welcome and introduction">
+            <div class="hero-container">
+                <article class="hero-content">
+                    <h1 class="hero-title">Emily O'Grady</h1>
+                    <p class="hero-subtitle">Marine Data Scientist & AI Researcher</p>
+                    <div class="hero-description">
+                        <p>Bridging <span class="highlight">oceanography</span> and <span class="highlight">artificial intelligence</span> to unlock insights from our vast oceans.</p>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="cv.html" class="cta-primary">Discover My Work</a>
+                        <a href="contact.html" class="cta-secondary">Get In Touch</a>
+                    </div>
+                </article>
+                <aside class="hero-visual" aria-label="Visual representation">
+                    <div class="brainstorm-container">
+                        <img src="images/brainstorm.png" alt="Scientific brainstorming visualization showing interconnected ideas and research concepts" class="brainstorm-image">
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About</h2>
+            <article class="about-flex">
+                <img src="images/dp.jpg" alt="Emily O'Grady, marine data scientist, professional headshot" class="profile-pic">
                 <p>
-                    Hi, I'm Emily O'Grady, a marine data scientist passionate about bridging technology and ocean science. Currently pursuing my Masters of Digital Innovation at Dalhousie University, I combine expertise in oceanographic data management with emerging technologies like AI to advance marine research. At the Bedford Institute of Oceanography, I lead data initiatives, develop R packages used nationally, and champion open science practices.
+                    I'm a marine data scientist pursuing my Masters of Digital Innovation at Dalhousie University, 
+                    where I'm exploring the intersection of AI and oceanographic research. At the Bedford Institute 
+                    of Oceanography, I lead initiatives in data quality control, R package development, and 
+                    collaborative research that advances our understanding of marine ecosystems through technology.
+                    <br><br>
+                    From developing the <em>marea</em> R package to chairing national support groups, I'm passionate 
+                    about making ocean science more accessible and reproducible through innovative digital solutions.
                 </p>
-                <a href="about.html" class="quote-btn">Learn More</a>
-            </div>
+            </article>
+            <div style="text-align: center; margin-top: 2em;">
+                <a href="about.html" class="quote-btn" aria-describedby="about-heading">Learn More About Me</a>
             </div>
         </section>
 
-        <!-- Project Spotlight -->
-        <section class="spotlight">
-    <h2>Project Spotlight</h2>
-    <div class="carousel-container">
-        <div class="carousel-track">
-            <div class="project-slide">
-                <img src="images/project1.jpg" alt="Project 1 Screenshot" class="project-image">
-                <div class="project-info">
-                    <h3>Masters of Digital Innovation</h3>
-                    <p>This is a two year program in the faculty of computer science at Dalhousie University, Halifax NS. The program focuses on the multidisciplinary implementation of emerging technologies. I began this program in September 2025 and will complete it in May 2027. <a href= blog/masters-of-digital-innovation.html>Read more</a></p>
-                </div>
-            </div>
-            <div class="project-slide">
-                <img src="images/project2.jpg" alt="Project 2 Screenshot" class="project-image">
-                <div class="project-info">
-                    <h3>MAREA</h3>
-                    <p>Marea: an R package for curated oceanographic data to be used in fisheries ecosystem approaches. <a href="https://github.com/MarEcosystemApproaches/marea">Check out the code</a></p>
-                </div>
-            </div>
-            <div class="project-slide">
-                <img src="images/project3.jpg" alt="Project 3 Screenshot" class="project-image">
-                <div class="project-info">
-                    <h3>AZMP Field Work</h3>
-                    <p>Fieldwork conducted as part of the Atlantic Zone Monitoring Program (AZMP) to collect data on oceanographic conditions and marine life.</p>
-                </div>
-            </div>
-            <div class="project-slide">
-                <img src="images/project4.jpg" alt="Project 4 Screenshot" class="project-image">
-                <div class="project-info">
-                    <h3>QSEA</h3>
-                    <p>A quality control framework leveraging agentic AI for oceanographic data <a href = 'blog/qsea.html'>Read more</a></p>
-                </div>
-            </div>
-            <!-- Add more project-slide blocks as needed -->
-        </div>
-    </div>
-    <div class="carousel-controls">
-        <button class="carousel-btn left" aria-label="Previous">&#8592;</button>
-        <button class="carousel-btn right" aria-label="Next">&#8594;</button>
-    </div>
-    <div style="text-align: center; margin-top: 2em;">
-        <a href="contact.html" class="quote-btn">Let's talk about your project!</a>
-    </div>
-</section>
+        <!-- Project Spotlight Carousel -->
+        <section class="spotlight" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" style="text-align: center;">Project Spotlight</h2>
+            <div class="carousel-container" role="region" aria-label="Project carousel" aria-describedby="projects-heading">
+                <div class="carousel-track" role="list">
+                    <!-- Project 1: QSEA -->
+                    <article class="project-slide project-slide-1" role="listitem">
+                        <div class="project-info">
+                            <h3>QSEA: Agentic AI for Ocean Data</h3>
+                            <p>Developing intelligent agents for automated ocean data quality control, combining AI with expert domain knowledge to revolutionize oceanographic data management and ensure scientific integrity.</p>
+                        </div>
+                        <img src="images/dal-fcs.png" alt="Dalhousie Faculty of Computer Science logo representing academic research collaboration" class="project-image project-1-image">
+                    </article>
 
-        <!-- Skills -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul class="cv-list">
-                <li><strong>Programming:</strong> Python, R, MatLab, HTML, CSS, JS</li>
-                <li><strong>Databases & queries:</strong> Oracle SQL</li>
-                <li><strong>Oceanographic field work:</strong> CTD, Niskin Bottles, Imaging equipment deployment, lab analysis, metadata collection</li>
-                <li><strong>Fisheries field work:</strong> Netting & electrofishing, metadata collection, riparian habitat assessment, water quality measurements</li>
-                <li><strong>Data visualization:</strong> Matplotlib, ggplot2</li>
-                <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow, Keras</li>
-                <li><strong>Data Wrangling:</strong> Pandas, NumPy, tidyverse</li>
-                <li><strong>Dashboards:</strong> Shiny, Dash, PowerBI</li>
-                <li><strong>Version Control:</strong> Git, GitHub</li> 
-                <li><strong>Other:</strong> MS Office, Google Workspace</li>
-            </ul>
+                    <!-- Project 2: marea R Package -->
+                    <article class="project-slide" role="listitem">
+                        <img src="images/marea_logo_jupijkam.png" alt="marea R package logo showing ocean-themed design elements" class="project-image">
+                        <div class="project-info">
+                            <h3>marea: Ecosystem Data Integration</h3>
+                            <p>Leading development of an R package that bridges oceanographic monitoring and fisheries ecosystem approaches, creating S4 classes and tools that make complex marine datasets accessible to researchers nationwide.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Ocean Data Quality Control -->
+                    <article class="project-slide" role="listitem">
+                        <img src="images/rrs-james-cook.jpg" alt="Research vessel RRS James Cook at sea conducting oceanographic research" class="project-image">
+                        <div class="project-info">
+                            <h3>National Ocean Monitoring Programs</h3>
+                            <p>Managing quality control and archival of long-term ocean monitoring data (AZMP, AZOMP, BBMP), ensuring data meets international standards and remains accessible for climate research and ecosystem management.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" aria-label="Previous project">‹</button>
+                <button class="carousel-btn next" aria-label="Next project">›</button>
+            </div>
+            <div style="text-align: center; margin-top: 2em;">
+                <a href="cv.html" class="quote-btn">View All Projects</a>
+            </div>
         </section>
 
-        <!-- Publications -->
-        <section id="publications">
-            <h2>Publications</h2>
+        <!-- Skills Section -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Core Competencies</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2em; margin-top: 2em;">
+                <div>
+                    <h3>Data Science & Analytics</h3>
+                    <ul>
+                        <li>R Package Development (CRAN published)</li>
+                        <li>Python for Ocean Science</li>
+                        <li>Machine Learning & AI Applications</li>
+                        <li>Database Management (Oracle SQL)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ocean & Marine Research</h3>
+                    <ul>
+                        <li>Oceanographic Field Work</li>
+                        <li>Data Quality Control Systems</li>
+                        <li>International Data Standards</li>
+                        <li>Long-term Monitoring Programs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Leadership & Collaboration</h3>
+                    <ul>
+                        <li>National Working Groups</li>
+                        <li>Workshop Facilitation</li>
+                        <li>Open Science Advocacy</li>
+                        <li>Mentorship & Training</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" aria-labelledby="publications-heading">
+            <h2 id="publications-heading">Recent Contributions</h2>
             <ul>
-                <li>vprr (R package) - <em>CRAN</em>, 2022 <a href="https://github.com/EOGrady21/vprr">View on GitHub</a></li>
-        
-                <!-- Add more publications as needed -->
+                <li><strong>vprr R Package</strong> - Published on CRAN, 2022 
+                    <a href="https://github.com/EOGrady21/vprr" target="_blank" rel="noopener">View on GitHub</a>
+                </li>
+                <li><strong>Image Classification in Marine Science</strong> - Co-author (submitted 2025)</li>
+                <li><strong>CODAP-NA v2</strong> - Co-author, oceanographic data compilation</li>
             </ul>
         </section>
     </main>
-       <footer>
-        <p>&copy; 2025 Emily O'Grady. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/emily-o-grady-oceans/" target="_blank" aria-label="LinkedIn">
-                <img src="images/linkedin.svg" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://github.com/eogrady21" target="_blank" aria-label="GitHub">
-                <img src="images/github.svg" alt="GitHub" class="social-icon">
-            </a>
-            <a href="https://orcid.org/0000-0002-1072-5879" target="_blank" aria-label="ORCID">
-                <img src="images/orcid.svg" alt="ORCID" class="social-icon">
-            </a>
-        </div>
-    </footer>
-    <script>
 
-   document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
-    hamburger.addEventListener('click', function() {
-        nav.classList.toggle('active');
-    });
-
-    // Carousel functionality
-    const track = document.querySelector('.carousel-track');
-    const projects = document.querySelectorAll('.carousel-track .project-slide');
-    const btnLeft = document.querySelector('.carousel-btn.left');
-    const btnRight = document.querySelector('.carousel-btn.right');
-    const carouselControls = document.querySelector('.carousel-controls');
-    let currentIndex = 0;
-
-    // Check if device supports touch
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    // Check screen size
-    const isMobileOrTablet = window.innerWidth <= 1024;
-
-    function getSlideWidth() {
-        const slide = projects[0];
-        const style = window.getComputedStyle(slide);
-        const width = slide.offsetWidth;
-        const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-        return width + gap;
-    }
-
-    function updateCarousel() {
-        // Only use transform if not on touch device or mobile/tablet
-        if (!isTouchDevice && !isMobileOrTablet) {
-            const slideWidth = getSlideWidth();
-            track.style.transform = `translateX(-${currentIndex * slideWidth + 10}px)`;
-        }
-    }
-
-    // Hide controls on touch devices or mobile/tablet
-    if (isTouchDevice || isMobileOrTablet) {
-        if (carouselControls) {
-            carouselControls.style.display = 'none';
-        }
-        // Remove transform to enable native scrolling
-        track.style.transform = 'none';
-    } else {
-        // Desktop functionality with buttons
-        btnLeft.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        btnRight.addEventListener('click', () => {
-            if (currentIndex < projects.length - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        updateCarousel(); // Ensure it starts at the first slide
-    }
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        const newIsMobileOrTablet = window.innerWidth <= 1024;
-        if (newIsMobileOrTablet !== isMobileOrTablet) {
-            location.reload(); // Simple way to handle responsive changes
-        }
-    });
-});
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

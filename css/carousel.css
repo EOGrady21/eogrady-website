@@ -1,0 +1,359 @@
+/**
+ * Project Carousel Styles
+ * 
+ * Handles the interactive project spotlight carousel with:
+ * - Horizontal scrolling functionality
+ * - Touch-friendly navigation
+ * - Responsive design across devices
+ * - Smooth animations and transitions
+ */
+
+/* =============================================================================
+   Project Spotlight Section
+   ============================================================================= */
+
+.spotlight {
+    margin: 2em 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: aliceblue;
+    padding: 1em 0;
+}
+
+/* =============================================================================
+   Carousel Container and Controls
+   ============================================================================= */
+
+.carousel-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; 
+    min-height: 420px;
+}
+
+/* Navigation Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.carousel-btn {
+    position: static;
+    background: #2c61d3;
+    color: #fff;
+    border: none;
+    font-size: 1.5em;
+    padding: 0.4em 0.8em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+    opacity: 0.9;
+}
+
+.carousel-btn:hover {
+    background: #23304a;
+    opacity: 1;
+}
+
+/* =============================================================================
+   Carousel Track and Sliding
+   ============================================================================= */
+
+.carousel-track {
+    display: flex;
+    scroll-behavior: smooth;
+    transition: transform 0.3s;
+    align-items: stretch;
+    gap: 20px;
+    padding-left: 5vw;
+}
+
+/* Custom scrollbar styling for better UX */
+.carousel-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-track::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+    background: #2c61d3;
+    border-radius: 4px;
+}
+
+.carousel-track::-webkit-scrollbar-thumb:hover {
+    background: #23304a;
+}
+
+/* =============================================================================
+   Project Slide Cards
+   ============================================================================= */
+
+.project-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-width: 600px;
+    max-width: 1200px;
+    width: 85vw;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px aliceblue;
+    padding: 2em;
+    gap: 2em;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 220px;
+}
+
+/* Project Images */
+.project-image {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #eee;
+    flex-shrink: 0;
+    align-self: flex-start;
+    display: block;
+}
+
+/* =============================================================================
+   Special Layout for First Project Slide
+   ============================================================================= */
+
+.project-slide-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-slide-1 .project-info {
+    order: 1;
+    flex: 1;
+    margin-right: 1em;
+}
+
+.project-1-image {
+    width: 160px;
+    height: 220px;
+    object-fit: contain;
+    order: 2;
+    margin-left: auto;
+    align-self: center;
+}
+
+/* =============================================================================
+   Project Information Content
+   ============================================================================= */
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+    text-align: left;
+}
+
+.project-info h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.8em;
+    color: #2a3a5c;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+}
+
+.project-info p {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* =============================================================================
+   Touch Device Optimizations
+   ============================================================================= */
+
+/* Enable scrolling on touch devices */
+@media (pointer: coarse) {
+    .carousel-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .carousel-track {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        transform: none !important; /* Disable transform on touch devices */
+    }
+    
+    .project-slide {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    
+    .carousel-controls {
+        display: none; /* Hide arrow buttons on touch devices */
+    }
+}
+
+/* =============================================================================
+   Mobile Responsive Design
+   ============================================================================= */
+
+@media (max-width: 700px) {
+    .carousel-container {
+        margin: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .carousel-track {
+        padding-left: 2vw;
+        gap: 15px;
+        transform: none !important; /* Disable transform on mobile */
+    }
+    
+    .project-slide {
+        min-width: 320px;
+        width: 90vw;
+        max-width: 400px;
+        padding: 1.5em;
+        gap: 1.5em;
+        flex-direction: column;
+        text-align: center;
+        scroll-snap-align: start;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 140px;
+        align-self: center;
+    }
+    
+    .project-info {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+    
+    .project-info h3 {
+        font-size: 1.4em;
+        text-align: center;
+        margin-bottom: 0.8em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.2;
+        white-space: normal;
+        max-width: 100%;
+    }
+    
+    .project-info p {
+        font-size: 1.1em;
+        text-align: center;
+    }
+    
+    .carousel-controls {
+        display: none;
+    }
+    
+    .carousel-btn {
+        font-size: 1.2em;
+        padding: 0.3em 0.6em;
+    }
+    
+    .spotlight {
+        padding: 0.5em 0;
+        margin: 1.5em 0;
+    }
+}
+
+/* =============================================================================
+   Extra Small Screen Optimization
+   ============================================================================= */
+
+@media (max-width: 400px) {
+    .project-slide {
+        min-width: 280px;
+        width: 95vw;
+        max-width: 320px;
+        padding: 1em;
+        gap: 1em;
+    }
+    
+    .project-info h3 {
+        font-size: 1.2em;
+        line-height: 1.1;
+        margin-bottom: 0.6em;
+        word-break: break-all;
+    }
+    
+    .project-info p {
+        font-size: 1em;
+    }
+}
+
+/* =============================================================================
+   Medium Screen Responsive Design
+   ============================================================================= */
+
+@media (max-width: 1200px) {
+    .project-info h3 {
+        font-size: 1.6em;
+        line-height: 1.3;
+    }
+}
+
+/* =============================================================================
+   Tablet Responsive Design
+   ============================================================================= */
+
+@media (max-width: 1024px) and (min-width: 701px) {
+    .carousel-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .carousel-track {
+        padding-left: 3vw;
+        gap: 18px;
+    }
+    
+    .project-slide {
+        min-width: 450px;
+        width: 80vw;
+        scroll-snap-align: start;
+    }
+    
+    .project-info h3 {
+        font-size: 1.7em;
+        line-height: 1.25;
+    }
+    
+    /* Hide controls on touch devices */
+    .carousel-controls {
+        display: none;
+    }
+}

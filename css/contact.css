@@ -1,0 +1,234 @@
+/**
+ * Contact Page Specific Styles
+ * 
+ * Handles styling for contact page layout, profile images,
+ * social media icons, and responsive design for all devices.
+ */
+
+/* =============================================================================
+   Contact Page Header Override
+   ============================================================================= */
+
+/* Completely override header layout for contact page */
+body.contact-page header {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 1em 2em !important;
+    background: #2a3a5c !important;
+    color: #fff !important;
+    /* Debug: Make header visually distinct */
+    border-bottom: 3px solid #4a90e2 !important;
+}
+
+/* Remove any social icons that might appear in header */
+body.contact-page .header-social,
+body.contact-page header .header-social,
+.contact-page .header-social,
+.contact-page header .header-social {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure menu takes full available space */
+body.contact-page header .menu {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* =============================================================================
+   Contact Page Layout
+   ============================================================================= */
+
+#contact {
+    background: #f7f9fc;
+    border-radius: 8px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 4em;
+    max-width: 1000px;
+    margin: 2em auto;
+    align-items: flex-start;
+    background: transparent;
+}
+
+.contact-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-profile {
+    flex: 0 0 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2c61d3;
+    box-shadow: 0 8px 24px rgba(44, 97, 211, 0.2);
+    margin-bottom: 1em;
+}
+
+.contact-blurb {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 250px;
+}
+
+/* =============================================================================
+   Contact Social Media Icons
+   ============================================================================= */
+
+.contact-social-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.contact-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #2c61d3 0%, #1a365d 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(44, 97, 211, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-social-link:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(44, 97, 211, 0.4);
+}
+
+.contact-social-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.contact-social-link:hover .contact-social-icon {
+    transform: scale(1.1);
+}
+
+/* =============================================================================
+   Mobile Responsive Design
+   ============================================================================= */
+
+@media (max-width: 700px) {
+    #contact {
+        text-align: center;
+        padding: 2em 1em;
+        background: #f7f9fc;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: flex-start;
+        background: transparent;
+        position: relative;
+    }
+    
+    .contact-profile {
+        flex: none;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 2em;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .contact-profile-pic {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1em auto;
+        display: block;
+    }
+    
+    .contact-blurb {
+        text-align: center;
+        max-width: 280px;
+        margin: 0 auto;
+        color: #333;
+        padding-bottom: 2em;
+    }
+    
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 2;
+        margin-top: 1em;
+        background-color: #f7f9fc;
+    }
+    
+    .contact-social-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+        justify-items: center;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        position: relative;
+        clear: both;
+    }
+    
+    .contact-social-link {
+        width: 70px;
+        height: 70px;
+        position: relative;
+    }
+    
+    .contact-social-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Debug: Ensure no floating or absolute positioning conflicts */
+    .contact-profile *,
+    .contact-links * {
+        position: static !important;
+        float: none !important;
+    }
+    
+    .contact-profile {
+        float: none !important;
+    }
+    
+    .contact-links {
+        float: none !important;
+        clear: both !important;
+    }
+}
+
+
