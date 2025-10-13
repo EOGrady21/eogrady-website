@@ -22,7 +22,7 @@ If in completing your lab / assignment / project you used any Artificial Intelli
 * [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) 
 
 
-### Prompt Used on *NAME OF AI TOOL*
+### Prompt Used onGitHub CoPilot (Claude Sonnet 4)
 
 ```
 For this whole project, clean up the code to make it organized and well commented. split the css out into stylesheets for easier maintenance, and use HTML and CSS best practices, without losing or impacting any functionality.
